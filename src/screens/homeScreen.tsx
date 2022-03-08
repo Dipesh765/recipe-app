@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from '@react-navigation/stack';
-import { Box, Center, Heading, HStack, Text, Image, ScrollView, Stack, AspectRatio, Spinner } from "native-base";
+import { Box, Center, Heading, Text, ScrollView, Input } from "native-base";
 import { Pressable } from "react-native";
 import { useQuery } from "react-query";
 import { useDispatch } from "react-redux";
@@ -40,6 +40,8 @@ export default function HomeScreen(){
                 </Box>
                  :
                 <ScrollView>
+                    <Input mt={2} placeholder="Search for dishes..."/>
+
                     {
                         data.searchResults[0].results.map((data:any, index:number)=>{
                             return(

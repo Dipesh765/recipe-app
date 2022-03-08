@@ -1,6 +1,4 @@
 import axios from "axios";
-import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
 
 const createQuery = (route : string)=>() => axios({
     method: 'get',
@@ -9,3 +7,4 @@ const createQuery = (route : string)=>() => axios({
 
 export const homePageQuery = ()=> createQuery('food/search');
 export const getRecipeInformation = (id: any)=> createQuery(`recipes/${id}/information`)
+export const autoCompleteQuery = (query: string) => createQuery(`recipes/autocomplete?number=5&query=${query}`)

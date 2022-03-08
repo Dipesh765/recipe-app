@@ -1,6 +1,6 @@
 import React from "react";
-import { AspectRatio, Avatar, Box, Center, CheckIcon, FlatList, Heading, HStack, Image, ScrollView, Spacer, Text, VStack } from "native-base";
-import { Query, useQuery } from "react-query";
+import { AspectRatio, Box, Center, CheckIcon, Heading, HStack, Image, ScrollView, Text } from "native-base";
+import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
 import LoadingComponent from "../components/loading";
 import { RootState } from "../redux/store";
@@ -62,7 +62,7 @@ export default function RecipeDetail(){
                     {
                         data.extendedIngredients.map((data: any, index: any)=>{
                             return(
-                                <HStack space={2} ml={4} mt={2}>
+                                <HStack key={index} space={2} ml={4} mt={2}>
                                     <CheckIcon size="5" mt="0.5" color="emerald.500" />
                                     <Text fontSize="lg" fontWeight={'bold'} color="amber.600" textAlign={'left'}>
                                         {data.name}
@@ -78,7 +78,7 @@ export default function RecipeDetail(){
                     {
                         data.analyzedInstructions[0].steps.map((stepList: any, index: number)=>{
                             return(
-                                <HStack space={2} w={width-48} m={4}>
+                                <HStack key={index} space={2} w={width-48} m={4}>
                                     <CheckIcon size="5" mt="0.5" color="emerald.500" />
                                     <Text fontSize="lg">
                                         {stepList.step}

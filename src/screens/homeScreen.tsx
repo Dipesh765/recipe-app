@@ -25,12 +25,9 @@ export default function HomeScreen(){
         dispatch(setIdOfRecipe(id))
         navigation.navigate('Recipe')
     }
-
-    
     return(
-        <Box mt={10}>
+        <Box >
             <Center>
-            <Heading>Recipe Application</Heading>
             {
                 isLoading ? 
                 <Box mt={20}>
